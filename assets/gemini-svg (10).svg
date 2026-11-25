@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540">
+  <defs>
+    <linearGradient id="bezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27272A" />
+      <stop offset="50%" stop-color="#18181B" />
+      <stop offset="100%" stop-color="#09090B" />
+    </linearGradient>
+    <linearGradient id="stageBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12141C" />
+      <stop offset="50%" stop-color="#1A1625" />
+      <stop offset="100%" stop-color="#0E171D" />
+    </linearGradient>
+    <radialGradient id="spot" cx="56%" cy="48%" r="42%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <style>
+      .lens { animation: springZoom 6.4s cubic-bezier(0.22, 1, 0.36, 1) infinite; transform-origin: 540px 210px; }
+      .playhead { animation: scrubLine 6.4s linear infinite; }
+      .ring { animation: clickRipple 6.4s ease-out infinite; transform-origin: 540px 210px; }
+      .rec { animation: blink 1.3s ease-in-out infinite; }
+      @keyframes springZoom {
+        0%, 18% { transform: scale(1) translate(0px, 0px); }
+        34%, 68% { transform: scale(1.26) translate(-24px, -8px); }
+        84%, 100% { transform: scale(1) translate(0px, 0px); }
+      }
+      @keyframes scrubLine {
+        0% { transform: translateX(0px); }
+        100% { transform: translateX(980px); }
+      }
+      @keyframes clickRipple {
+        0%, 28% { transform: scale(0.2); opacity: 0; }
+        34% { opacity: 0.95; }
+        52%, 100% { transform: scale(2.4); opacity: 0; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+      }
+    </style>
+  </defs>
+
+  
+  <rect x="4" y="4" width="1192" height="532" rx="24" fill="url(#bezel)" stroke="#3F3F46" stroke-width="1.5" />
+  <rect x="14" y="14" width="1172" height="512" rx="18" fill="#090A0D" />
+
+  
+  <rect x="14" y="14" width="1172" height="44" rx="18" fill="#0E1015" />
+  <line x1="14" y1="58" x2="1186" y2="58" stroke="#1E2028" />
+  <circle cx="38" cy="36" r="5" fill="#3F3F46" /><circle cx="56" cy="36" r="5" fill="#3F3F46" /><circle cx="74" cy="36" r="5" fill="#3F3F46" />
+  <text x="108" y="40" fill="#E4E4E7" font-family="&#39;Segoe UI&#39;, -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="1.2">ZOOMCAST STUDIO</text>
+  <text x="262" y="40" fill="#52525B" font-family="Consolas, monospace" font-size="11">1920×1080  •  60.00 FPS  •  LOCAL ENGINE</text>
+
+  
+  <g transform="translate(535, 24)" font-family="Consolas, monospace" font-size="11">
+    <rect x="0" y="0" width="54" height="24" rx="6" fill="#27272A" stroke="#52525B" />
+    <text x="27" y="16" text-anchor="middle" fill="#FFFFFF" font-weight="700">16:9</text>
+    <rect x="62" y="0" width="54" height="24" rx="6" fill="#12141A" />
+    <text x="89" y="16" text-anchor="middle" fill="#71717A">9:16</text>
+    <rect x="124" y="0" width="44" height="24" rx="6" fill="#12141A" />
+    <text x="146" y="16" text-anchor="middle" fill="#71717A">1:1</text>
+  </g>
+
+  
+  <circle class="rec" cx="988" cy="36" r="4.5" fill="#F43F5E" />
+  <text x="1000" y="40" fill="#A1A1AA" font-family="Consolas, monospace" font-size="11">00:08.24</text>
+  <rect x="1076" y="23" width="94" height="26" rx="7" fill="#FFFFFF" />
+  <text x="1123" y="40" text-anchor="middle" fill="#09090B" font-family="&#39;Segoe UI&#39;, sans-serif" font-size="11" font-weight="800">Export 4K</text>
+
+  
+  <clipPath id="stageClip">
+    <rect x="28" y="72" width="880" height="314" rx="14" />
+  </clipPath>
+  <rect x="28" y="72" width="880" height="314" rx="14" fill="url(#stageBg)" stroke="#22252E" />
+  <rect x="28" y="72" width="880" height="314" rx="14" fill="url(#spot)" />
+
+  
+  <g clip-path="url(#stageClip)">
+    <g class="lens">
+      
+      <rect x="148" y="106" width="640" height="246" rx="14" fill="#0C0E14" stroke="#2D3240" stroke-width="1.5" />
+      <rect x="148" y="106" width="640" height="30" rx="14" fill="#141720" />
+      <circle cx="168" cy="121" r="4" fill="#EF4444" /><circle cx="182" cy="121" r="4" fill="#F59E0B" /><circle cx="196" cy="121" r="4" fill="#10B981" />
+      <text x="218" y="125" fill="#71717A" font-family="Consolas, monospace" font-size="11">compositor.ts — 60fps Spring Camera</text>
+
+      
+      <g font-family="Consolas, monospace" font-size="12">
+        <text x="174" y="166" fill="#71717A">01</text><text x="206" y="166" fill="#A1A1AA">const camera = <tspan fill="#FFFFFF" font-weight="700">evaluateSpringZoom</tspan>(t, keyframes);</text>
+        <text x="174" y="192" fill="#71717A">02</text><text x="206" y="192" fill="#A1A1AA">ctx.scale(camera.scale, camera.scale); <tspan fill="#34D399">// 2.20x Smooth</tspan></text>
+        <text x="174" y="218" fill="#71717A">03</text><text x="206" y="218" fill="#A1A1AA">renderClickRipple(ctx, target.x, target.y, progress);</text>
+      </g>
+
+      
+      <rect x="462" y="252" width="156" height="38" rx="9" fill="#FFFFFF" />
+      <text x="540" y="276" text-anchor="middle" fill="#09090B" font-family="&#39;Segoe UI&#39;, sans-serif" font-size="13" font-weight="800">Ship v1.0 →</text>
+
+      
+      <circle class="ring" cx="540" cy="271" r="24" fill="none" stroke="#F59E0B" stroke-width="2.5" />
+    </g>
+
+    
+    <circle cx="868" cy="346" r="24" fill="#18181B" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="2" />
+    <text x="868" y="350" text-anchor="middle" fill="#E4E4E7" font-family="Consolas, monospace" font-size="10" font-weight="700">PiP</text>
+  </g>
+
+  
+  <rect x="922" y="72" width="250" height="314" rx="14" fill="#0E1015" stroke="#1E2028" />
+  <text x="942" y="102" fill="#A1A1AA" font-family="Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1">OPTICS &amp; FRAME</text>
+  <line x1="942" y1="114" x2="1152" y2="114" stroke="#1E2028" />
+
+  <g font-family="Consolas, monospace" font-size="11">
+    <text x="942" y="140" fill="#71717A">ZOOM DEPTH</text><text x="1152" y="140" text-anchor="end" fill="#FFFFFF" font-weight="700">2.20×</text>
+    <rect x="942" y="150" width="210" height="5" rx="2.5" fill="#27272A" /><rect x="942" y="150" width="136" height="5" rx="2.5" fill="#FFFFFF" />
+
+    <text x="942" y="186" fill="#71717A">SPRING DAMPING</text><text x="1152" y="186" text-anchor="end" fill="#34D399" font-weight="700">0.84</text>
+    <rect x="942" y="196" width="210" height="5" rx="2.5" fill="#27272A" /><rect x="942" y="196" width="168" height="5" rx="2.5" fill="#34D399" />
+
+    <text x="942" y="232" fill="#71717A">CORNER RADIUS</text><text x="1152" y="232" text-anchor="end" fill="#E4E4E7">18 px</text>
+    <rect x="942" y="242" width="210" height="5" rx="2.5" fill="#27272A" /><rect x="942" y="242" width="112" height="5" rx="2.5" fill="#A1A1AA" />
+
+    <text x="942" y="284" fill="#71717A">BACKDROP</text>
+    <rect x="942" y="296" width="38" height="24" rx="6" fill="#18181B" stroke="#FFFFFF" stroke-width="1.5" />
+    <rect x="988" y="296" width="38" height="24" rx="6" fill="#0F2922" />
+    <rect x="1034" y="296" width="38" height="24" rx="6" fill="#2A1C16" />
+    <rect x="1080" y="296" width="38" height="24" rx="6" fill="#172033" />
+
+    <text x="942" y="358" fill="#52525B">100% LOCAL CANVAS RENDER</text>
+  </g>
+
+  
+  <rect x="28" y="400" width="1144" height="112" rx="14" fill="#0E1015" stroke="#1E2028" />
+  <text x="48" y="424" fill="#71717A" font-family="Consolas, monospace" font-size="10" font-weight="700">VIDEO + AUDIO</text>
+  
+  <rect x="150" y="410" width="1002" height="32" rx="6" fill="#141720" />
+  <path d="M164 426 L176 418 L188 434 L200 420 L212 432 L224 415 L236 436 L248 422 L260 430 L272 416 L284 435 L296 424 L308 428 L320 417 L332 433 L344 422 L356 434 L368 418 L380 430 L392 424 L404 426 L440 426 L452 414 L464 437 L476 418 L488 434 L500 416 L512 436 L524 422 L536 430 L548 420 L560 432 L572 425 L620 426 L632 417 L644 435 L656 419 L668 433 L680 415 L692 436 L704 421 L716 431 L728 424 L820 426 L832 418 L844 434 L856 420 L868 432 L880 423 L960 426 L972 416 L984 436 L996 420 L1008 432 L1020 424 L1130 426" fill="none" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1.6" />
+
+  
+  <text x="48" y="476" fill="#FBBF24" font-family="Consolas, monospace" font-size="10" font-weight="700">SPRING ZOOMS</text>
+  <rect x="150" y="456" width="1002" height="38" rx="6" fill="#12141B" />
+  <rect x="330" y="462" width="210" height="26" rx="6" fill="#F59E0B" fill-opacity="0.18" stroke="#F59E0B" />
+  <text x="435" y="479" text-anchor="middle" fill="#FEF08A" font-family="Consolas, monospace" font-size="11" font-weight="700">2.20×  •  Spring Ease (2.4s)</text>
+  <rect x="740" y="462" width="180" height="26" rx="6" fill="#F59E0B" fill-opacity="0.18" stroke="#F59E0B" />
+  <text x="830" y="479" text-anchor="middle" fill="#FEF08A" font-family="Consolas, monospace" font-size="11" font-weight="700">2.60×  •  Spotlight (1.8s)</text>
+
+  
+  <g class="playhead">
+    <line x1="158" y1="406" x2="158" y2="504" stroke="#FFFFFF" stroke-width="2" />
+    <polygon points="152,404 164,404 158,413" fill="#FFFFFF" />
+  </g>
+</svg>
