@@ -178,6 +178,6 @@ export class LocalGifEncoder {
   finish(): Blob {
     // GIF Trailer
     this.writeBytes([0x3b]);
-    return new Blob(this.chunks, { type: 'image/gif' });
+    return new Blob(this.chunks as BlobPart[], { type: 'image/gif' });
   }
 }
